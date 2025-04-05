@@ -19,7 +19,7 @@ const Login = () => {
             password: data.password,
 
         }
-        axios.post(`${import.meta.env.VITE_HOST}/api/user/login`, userinfo).then((response) => {
+        axios.post(`${import.meta.env.VITE_HOST}/api/user/login`, userinfo,{withCredentials: true}).then((response) => {
             console.log(response.data);
             if (response.data) {
                 alert("Login  successfully")

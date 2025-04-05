@@ -16,8 +16,11 @@ const URI = process.env.MongoDB_URI;
 
 app.use(express.json())
 app.use(cors({
-  credentials: true,
-}))
+  origin: (origin, callback) => {
+      callback(null, true);
+  },
+  credentials: true
+}));
 app.use(cookieParser())
 
 try {

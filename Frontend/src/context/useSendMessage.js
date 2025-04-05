@@ -12,7 +12,7 @@ const useSendMessage = () => {
         try {
             const res = await axios.post(
                 `${import.meta.env.VITE_HOST}/api/message/send/${selectedConversation._id}`,
-                {message}
+                {message},{withCredentials: true},
             );
             setMessage([...messages, res.data]);
             setLoading(false);
