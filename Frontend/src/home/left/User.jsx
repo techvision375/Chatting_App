@@ -1,10 +1,17 @@
 import React from 'react'
+import useConversation from '../../zustand/UseConversation'
 
-const User = () => {
+
+const User = ({ user }) => {
+    const { selectedConversation, setselectedConversation } = useConversation();
+    const isSelected = selectedConversation?._id === user._id;
+
     return (
-        <div>
+        <div className={`hover:bg-slate-700 duration-300 ${isSelected ? "bg-slate-700" : ""}`}
+            onClick={() => setselectedConversation(user)}>
 
-            <div className='flex space-x-4 px-8 py-3 hover:bg-slate-700 duration-300 cursor-pointer'>
+
+            <div className="flex space-x-4 px-8 py-3 hover:bg-slate-700 duration-300 cursor-pointer">
                 <div className="avatar avatar-online">
                     <div className="w-12 rounded-full">
                         <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
@@ -12,10 +19,10 @@ const User = () => {
                 </div>
                 <div>
                     <h1 className='font-bold'>
-                        tarun
+                        {user.fullname}
                     </h1>
                     <span>
-                        tarunkumar3387@gmail.com
+                        {user.email}
                     </span>
                 </div>
             </div>

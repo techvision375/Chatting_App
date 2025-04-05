@@ -10,7 +10,9 @@ const Left = () => {
       <Search />
       <br />
 
-      <Users />
+      <div className='flex-1 overflow-y-auto' style={{ minHeight:"calc(82vh - 10vh)" }}>
+     <Users/>
+     </div>
 
       <Logout />
     </div>

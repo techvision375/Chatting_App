@@ -27,7 +27,11 @@ export const signup = async (req, res) => {
         await newUser.save();
         if(newUser){
             createTokenAndSaveCookie(newUser._id , res)
-            res.status(201).json({ message: "user created successfully", newUser })
+            res.status(201).json({ message: "user created successfully", user:{
+                _id: newUser._id,
+                fullname:newUser.fullname,
+                email: newUser.email
+            } })
 
         }
 
@@ -75,3 +79,19 @@ export const logout = async (req,res) =>{
         res.status(500).json({error: "internal server error"}) 
     }
 }
+
+export const allUsers = async (req,res) =>{
+    try{
+        const loggedInUser = req.user._id;
+        const filteredUser = await User.find({
+            _id: { $ne: loggedInUser } // Exclude the logged-in user from the results
+        }).select("-password");
+        res.status(201).json(
+            filteredUser,
+        );
+
+    }catch (error) {
+        console.log("error in allUser controller:" +error);
+        
+    }
+};

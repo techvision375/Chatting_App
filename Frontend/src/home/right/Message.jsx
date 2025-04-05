@@ -1,15 +1,21 @@
 import React from 'react'
+const Message = ({ message }) => {
+    const authUser = JSON.parse(localStorage.getItem("ChatApp"));
+    const itsme = message.senderId === authUser.user._id;
+    // console.log(message.senderId);
+    // console.log(authUser.user._id);
+    const chatName = itsme ? "chat-end" : "chat-start";
+    const chatColor = itsme ? "bg-slate-500" : "bg-blue-500";
 
-const Message = () => {
+
+
     return (
         <div>
             <div className='p-4'>
-                <div className="chat chat-end">
-                    <div className="chat-bubble chat-bubble-info">Calm down, Anakin.</div>
+                <div className={`chat ${chatName}`}>
+                    <div className={`chat-bubble text-white ${chatColor}`}>{message.message}</div>
                 </div>
-                <div className="chat chat-start">
-                    <div className="chat-bubble chat-bubble-success">You have been given a great honor.</div>
-                </div>
+
             </div>
         </div>
     )
