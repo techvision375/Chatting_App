@@ -13,14 +13,14 @@ const Messages = () => {
   const lastMsgRef = useRef();
   useEffect(() => {
     setTimeout(() => {
-      if(lastMsgRef.current) {
+      if (lastMsgRef.current) {
         lastMsgRef.current.scrollIntoView({ behavior: 'smooth' });
       }
     }, 100)
   }, [messages]);
-  
 
-  
+
+
   return (
     <div className='flex-1 overflow-y-auto' style={{ minHeight: 'calc(92vh - 12vh)' }}>
       <div>
@@ -29,7 +29,10 @@ const Messages = () => {
         ) : (
           messages.length > 0 &&
           messages.map((message) => (
-            <Message key={message._id} message={message} />
+            <div key={message._id} ref={lastMsgRef}>
+              <Message message={message}  />
+
+            </div>
           ))
         )}
 

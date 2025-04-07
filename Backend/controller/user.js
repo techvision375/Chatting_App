@@ -89,7 +89,7 @@ export const allUsers = async (req,res) =>{
         res.status(201).json(
             filteredUser,
         );
-console.log("all users")
+
     }catch (error) {
         console.log("error in allUser controller:" +error);
         

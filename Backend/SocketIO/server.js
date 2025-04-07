@@ -28,11 +28,15 @@ io.on("connection", (socket) => {
         console.log("Hello" ,users);
 
     }
+    // used to send the event to all connected users
+    io.emit("getOnlineUsers", Object.keys(users));
 
 
 
     socket.on("disconnect", () => {
         console.log("user disconnected" , socket.id);
+        delete users[userId];
+        io.emit("getOfflineUsers", Object.keys(users));
     })
 
 })
