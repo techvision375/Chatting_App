@@ -13,8 +13,8 @@ const ChatUser = () => {
                 </div>
             </div>
             <div>
-                <h1 className='text-xl'>tarun</h1>
-                {/* <h1 className='text-xl'>{selectedConversation.fullname}</h1> */}
+                {/* <h1 className='text-xl'>tarun</h1> */}
+                <h1 className='text-xl'>{selectedConversation.fullname}</h1>
                 <span className='text-sm'>Offline</span>
             </div>
         </div>

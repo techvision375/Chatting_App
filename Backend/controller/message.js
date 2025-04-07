@@ -31,8 +31,9 @@ export const sendMessage = async (req, res) => {
         // await conversation.save();
         // await newMessage.save();
         await Promise.all([conversation.save(), newMessage.save()]);
+console.log("newMessage", newMessage)   
         res.status(201).json({
-            message: "Message sent successfully",
+            message: newMessage.message,
             newMessage,
         });
 
@@ -61,4 +62,4 @@ export const getMessage = async (req, res) =>{
 
         
     }
-}
+}   

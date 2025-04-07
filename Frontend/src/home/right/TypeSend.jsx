@@ -9,6 +9,7 @@ const TypeSend = () => {
     const handleSubmit =  async (e) =>{
         e.preventDefault();
         await sendMessage(message);
+        
         setmessage("");
     }
     return (

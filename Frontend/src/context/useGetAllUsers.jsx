@@ -5,13 +5,13 @@ import axios from 'axios'
 function useGetAllUsers() {
   const [allUsers, setAllUsers] = useState([])
   const [loading, setLoading] = useState(false)
-  useEffect(() => {
+  useEffect(  () => {
     const getUser = async () => {
       setLoading(true);
       try {
         const token = Cookies.get("jwt");
         const response = await axios.get(`${import.meta.env.VITE_HOST}/api/user/allusers`, {
-         withCredentials: true,
+          withCredentials: true,
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -19,12 +19,19 @@ function useGetAllUsers() {
         setAllUsers(response.data);
         setLoading(false);
       } catch (error) {
-        console.log("error in useGetAllUsers" + error);
+        console.error("Error in useGetAllUsers:", error.message);
+        if (error.response) {
+          console.error("Response data:", error.response.data);
+          console.error("Response status:", error.response.status);
+        }
+        setLoading(false);
       }
+    
+      
     }
     getUser();
-
-
+    
+    
   }, [])
   return [allUsers, loading]
 }

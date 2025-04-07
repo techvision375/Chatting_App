@@ -30,7 +30,7 @@ const Signup = () => {
             password: data.password,
             confirmPassword: data.confirmPassword
         }
-        await axios.post("/api/user/signup", userinfo).then((response) => {
+        await axios.post(`${import.meta.env.VITE_HOST}/api/user/signup`, userinfo).then((response) => {
             console.log(response.data);
             if (response.data) {
 

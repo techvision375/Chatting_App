@@ -2,6 +2,7 @@ import React from 'react'
 const Message = ({ message }) => {
     const authUser = JSON.parse(localStorage.getItem("ChatApp"));
     const itsme = message.senderId === authUser.user._id;
+    // console.log(itsme)
     // console.log(message.senderId);
     // console.log(authUser.user._id);
     const chatName = itsme ? "chat-end" : "chat-start";

@@ -7,33 +7,39 @@ import cookieParser from "cookie-parser"
 
 import userRoute from "./routes/user.js"
 import messageRoute from "./routes/message.js"
+import { app, server } from "./SocketIO/server.js"
 
-const app = express()
 dotenv.config()
+app.use(express.static('public'));
 
-const PORT = process.env.PORT || 3002;
+
+// const PORT = process.env.PORT
+const PORT = process.env.PORT
 const URI = process.env.MongoDB_URI;
 
 app.use(express.json())
 app.use(cors({
   origin: (origin, callback) => {
-      callback(null, true);
+    callback(null, true);
   },
   credentials: true
 }));
 app.use(cookieParser())
 
 try {
-    mongoose.connect(URI);
-    console.log("connected to MongoDB");
-    
-  } catch (error) {
-    console.log(error)
-  }
-  app.use("/api/user" , userRoute);
-  app.use("/api/message" , messageRoute);
-  
-  
-  app.listen(PORT, () => {
-    console.log(`Example app listening on port http://localhost:${PORT}`)
-  })
+  mongoose.connect(URI);
+  console.log("connected to MongoDB");
+
+} catch (error) {
+  console.log(error)
+}
+app.use("/api/user", userRoute);
+app.use("/api/message", messageRoute);
+
+app.get('*', (req, res) => {
+  res.sendFile('index.html', { root: 'public' });
+});
+
+server.listen(PORT, () => {
+  console.log(`Example app listening on port http://localhost:${PORT}`)
+})
