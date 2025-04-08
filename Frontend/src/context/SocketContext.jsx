@@ -16,7 +16,7 @@ export const SocketProvider = ({ children }) => {
   const [onlineUsers, setOnlineUsers] = useState([]);
 
   const [authUser] = useAuth();
-  console.log(authUser)
+  // console.log(authUser)
   useEffect(() => {
     if (authUser) {
       const socket = io("http://localhost:3002", {

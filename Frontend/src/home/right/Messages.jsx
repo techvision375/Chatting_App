@@ -11,7 +11,7 @@ const Messages = () => {
   const { loading, messages } = useGetMessage();
   useGetSocketMessage(); //listening incoming messages 
 
-  console.log(messages);
+  // console.log(messages);
 
   const lastMsgRef = useRef();
   useEffect(() => {

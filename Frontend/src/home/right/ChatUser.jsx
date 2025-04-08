@@ -7,9 +7,9 @@ const ChatUser = () => {
     const { selectedConversation } = useConversation();
     const {onlineUsers} = useSocketContext();
     const getOnlineUsers = (userId) => {
-        return onlineUsers.includes(userId) ? "avatar-online" : "offline";
+        return onlineUsers.includes(userId) ? "online" : "offline";
     }
-    console.log(selectedConversation);
+    // console.log(selectedConversation);
     return (
         <div className='flex space-x-3  items-center justify-center bg-gray-800 hover:bg-gray-700 from-purple-300 h-[12vh]'>
             {/* <div className="avatar avatar-online"> */}

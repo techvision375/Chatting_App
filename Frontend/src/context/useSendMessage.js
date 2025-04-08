@@ -8,7 +8,7 @@ const useSendMessage = () => {
 
     const sendMessage = async (message) => {
         setLoading(true);
-
+        console.log('message:', message);
         try {
             const res = await axios.post(
                 `${import.meta.env.VITE_HOST}/api/message/send/${selectedConversation._id}`,

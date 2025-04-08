@@ -10,7 +10,7 @@ import Loading from './componants/Loading';
 
 const App = () => {
   const [authUser, setAuthUser] = useAuth()
-  console.log(authUser)
+  // console.log(authUser)
   return (
 
     // 
