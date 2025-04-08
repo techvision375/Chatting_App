@@ -3,6 +3,7 @@ import { IoIosSearch } from "react-icons/io";
 import { useState } from 'react';
 import useGetAllUsers from '../../context/useGetAllUsers';
 import useConversation from '../../zustand/UseConversation';
+import toast from 'react-hot-toast';
 
 const Search = () => {
     const [search, setSearch] = useState("");
@@ -18,7 +19,7 @@ const Search = () => {
             setSearch("");
         }
         else{
-            alert("No user found with this name")
+            toast.error("No user found with this name")
             setSearch("");
         }
     };

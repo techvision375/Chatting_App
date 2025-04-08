@@ -4,6 +4,7 @@ import { IoIosSearch } from "react-icons/io";
 import { CiLogout } from "react-icons/ci";
 import axios from 'axios';
 import Cookies from 'js-cookie';
+import toast from 'react-hot-toast';
 
 const Logout = () => {
     const [loading , setLoading] = useState(false);
@@ -14,7 +15,7 @@ const Logout = () => {
             localStorage.removeItem("ChatApp");
             Cookies.remove("jwt");
             setLoading(false);
-            alert("Logout successfully");
+            toast.success("Logout successfully");
             window.location.reload();
             
         } catch (error) {
