@@ -9,7 +9,7 @@ import useGetSocketMessage from '../../context/useGetSocketMessage.js';
 
 const Messages = () => {
   const { loading, messages } = useGetMessage();
-  // useGetSocketMessage(); //listening incoming messages 
+  useGetSocketMessage(); //listening incoming messages 
 
   console.log(messages);
 
