@@ -14,7 +14,7 @@ const useSendMessage = () => {
                 `${import.meta.env.VITE_HOST}/api/message/send/${selectedConversation._id}`,
                 {message},{withCredentials: true},
             );
-            setMessage([...messages, res.data]);
+            setMessage([...messages, res.data.newMessage]);
             setLoading(false);
         } catch (error) {
             console.error('Error in send  message:', error);
