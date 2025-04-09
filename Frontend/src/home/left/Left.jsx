@@ -6,7 +6,7 @@ import Logout from './Logout'
 
 const Left = () => {
   return (
-    <div className='w-[30%] bg-black ' >
+    <div className='w-full bg-black text-gray-300' >
       <Search />
       <br />
 
