@@ -2,7 +2,7 @@ import React, { useLayoutEffect } from 'react'
 import ChatUser from './ChatUser'
 import Messages from './Messages'
 import TypeSend from './TypeSend'
-import useConversation from '../../zustand/UseConversation'
+import useConversation from '../../zustand/useConversation.js'
 import { useEffect } from 'react'
 import { useAuth } from '../../context/AuthProvider'
 import { CiMenuFries } from "react-icons/ci";
