@@ -1,5 +1,5 @@
 import React, { useEffect, useState  } from 'react'
-import useConversation from '../zustand/UseConversation';
+import useConversation from '../zustand/useConversation.js';
 import axios from 'axios';
 
 const useGetMessage = () => {
