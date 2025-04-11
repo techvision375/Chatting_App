@@ -1,5 +1,5 @@
 import React from 'react'
-import useConversation from '../../zustand/UseConversation'
+import useConversation from '../../zustand/useConversation'
 import { useSocketContext } from '../../context/SocketContext';
 import { useAuth } from '../../context/AuthProvider';
 
