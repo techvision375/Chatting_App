@@ -2,7 +2,7 @@ import React from 'react'
 import Left from './home/left/Left'
 import Right from './home/right/Right'
 import './index.css';
-import Signup from './componants/signup';
+import Signup from './componants/Signup';
 import Login from './componants/Login';
 import { useAuth } from './context/AuthProvider';
 import { Navigate, Route, Routes } from 'react-router-dom'
