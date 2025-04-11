@@ -1,10 +1,9 @@
 import React from 'react'
 import { IoIosSearch } from "react-icons/io";
 import { useState } from 'react';
-import useGetAllUsers from '../../context/useGetAllUsers';
-import useConversation from '../../zustand/UseConversation';
+import useGetAllUsers from '../../context/useGetAllUsers.jsx';
+import useConversation from '../../zustand/useConversation.js';
 import toast from 'react-hot-toast';
-
 const Search = () => {
     const [search, setSearch] = useState("");
     const [allUsers] = useGetAllUsers();
