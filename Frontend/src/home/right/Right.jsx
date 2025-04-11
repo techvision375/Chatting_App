@@ -4,7 +4,7 @@ import Messages from './Messages'
 import TypeSend from './TypeSend'
 import useConversation from '../../zustand/useConversation.js'
 import { useEffect } from 'react'
-import { useAuth } from '../../context/AuthProvider'
+import { useAuth } from '../../context/AuthProvider.jsx'
 import { CiMenuFries } from "react-icons/ci";
 
 const Right = () => {
