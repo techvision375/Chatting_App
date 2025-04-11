@@ -1,5 +1,5 @@
 import React, { use } from 'react'
-import useConversation from '../../zustand/UseConversation.js'
+import useConversation from '../../zustand/useConversation.js'
 import { useSocketContext } from '../../context/SocketContext.jsx';
 import { CiMenuFries } from "react-icons/ci";
 
